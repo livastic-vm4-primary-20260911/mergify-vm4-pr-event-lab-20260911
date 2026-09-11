@@ -14,5 +14,4 @@ jobs:
       - name: Run repository PR script
         env:
           GH_TOKEN: ${{ github.token }}
-          VM4_QUEUE_CANARY: ${{ secrets.VM4_QUEUE_CANARY }}
         run: bash ci/pr-probe.sh
