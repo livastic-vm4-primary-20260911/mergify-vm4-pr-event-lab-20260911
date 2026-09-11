@@ -20,4 +20,4 @@ pull_request_rules:
       - -mergify-configuration-changed
     actions:
       comment:
-        message: PRECEDENCE_CONFIG_CHANGED_FALSE
+        message: PRECEDENCE_FALLBACK_CONTROL_CHANGED
