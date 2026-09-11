@@ -6,3 +6,11 @@ queue_rules:
     merge_conditions:
       - check-success = vm4-never-merge-pr-event-guard
     checks_timeout: null
+pull_request_rules:
+  - name: Autoqueue VM4-B external fork probe
+    conditions:
+      - author = livastic-vm4-secondary-20260911
+      - base = main
+    actions:
+      queue:
+        name: pr-event-security-probe
