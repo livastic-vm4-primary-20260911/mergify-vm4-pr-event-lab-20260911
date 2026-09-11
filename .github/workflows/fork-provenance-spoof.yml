@@ -1,0 +1,13 @@
+name: Fork Provenance Spoof Control
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: read
+jobs:
+  spoof:
+    name: vm4-trusted-provenance-check
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo fork-only-check-success
