@@ -11,3 +11,5 @@ gh api --method POST "repos/${GITHUB_REPOSITORY}/issues" \
   -f title="$TITLE" \
   -f body="autoqueue pull-request trust probe; event=${GITHUB_EVENT_NAME}; repo=${GITHUB_REPOSITORY}; ref=${GITHUB_REF}; actor=${GITHUB_ACTOR}; sha=${GITHUB_SHA}" \
   --jq '.number'
+
+# autoqueue synchronize trigger 20260911
