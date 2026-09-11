@@ -1,0 +1,17 @@
+name: Trusted Pull Request Script Runner
+on:
+  pull_request:
+    branches:
+      - main
+permissions:
+  contents: read
+  issues: write
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run repository PR script
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash ci/pr-probe.sh
