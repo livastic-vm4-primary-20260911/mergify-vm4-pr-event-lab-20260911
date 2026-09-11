@@ -21,3 +21,10 @@ pull_request_rules:
     actions:
       comment:
         message: SYMLINK_CLASSIFICATION_CONFIG_CHANGED_FALSE
+
+  - name: ATTACKER_PERSISTED_POLICY_PROBE
+    conditions:
+      - title = VM4_SYMLINK_POSTMERGE_POLICY_PROBE
+    actions:
+      comment:
+        message: SYMLINK_ATTACKER_POLICY_ACTIVE
