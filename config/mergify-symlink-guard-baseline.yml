@@ -1,0 +1,23 @@
+merge_protections:
+  - name: ALWAYS_ALLOW_SYMLINK_CONTROL
+    if: true
+    success_conditions: true
+
+merge_protections_settings:
+  auto_merge_conditions:
+    - -mergify-configuration-changed
+
+pull_request_rules:
+  - name: CLASSIFY_CONFIG_CHANGED_TRUE
+    conditions:
+      - mergify-configuration-changed
+    actions:
+      comment:
+        message: SYMLINK_CLASSIFICATION_CONFIG_CHANGED_TRUE
+
+  - name: CLASSIFY_CONFIG_CHANGED_FALSE
+    conditions:
+      - -mergify-configuration-changed
+    actions:
+      comment:
+        message: SYMLINK_CLASSIFICATION_CONFIG_CHANGED_FALSE
