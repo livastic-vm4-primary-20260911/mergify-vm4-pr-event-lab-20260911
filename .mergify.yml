@@ -6,7 +6,3 @@ queue_rules:
     merge_conditions:
       - check-success = vm4-never-merge-pr-event-guard
     checks_timeout: null
-commands_restrictions:
-  queue:
-    conditions:
-      - sender = @vm4-merge-ops-trusted-renamed
