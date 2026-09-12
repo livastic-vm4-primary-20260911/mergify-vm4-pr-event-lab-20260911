@@ -6,18 +6,3 @@ queue_rules:
     merge_conditions:
       - check-success = vm4-never-merge-pr-event-guard
     checks_timeout: null
-
-pull_request_rules:
-  - name: WA_PRODUCT_ON_CONTROL
-    conditions:
-      - title = VM4_WA_ON_CONTROL
-    actions:
-      comment:
-        message: WA_PRODUCT_ON_ACTIVE
-
-  - name: WA_PRODUCT_OFF_MERGE_PROBE
-    conditions:
-      - title = VM4_WA_PRODUCT_OFF_TRIGGER
-    actions:
-      merge:
-        method: merge
