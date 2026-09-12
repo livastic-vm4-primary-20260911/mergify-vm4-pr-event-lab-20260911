@@ -1,8 +1,8 @@
-merge_protections:
-  - name: ALWAYS_ALLOW_DIRECT_OFF_CONTROL
-    if: true
-    success_conditions: true
-
-merge_protections_settings:
-  auto_merge_conditions:
-    - title = VM4_MP_DIRECT_OFF_TRIGGER
+merge_queue:
+  max_parallel_checks: 1
+queue_rules:
+  - name: pr-event-security-probe
+    queue_conditions: true
+    merge_conditions:
+      - check-success = vm4-never-merge-pr-event-guard
+    checks_timeout: null
