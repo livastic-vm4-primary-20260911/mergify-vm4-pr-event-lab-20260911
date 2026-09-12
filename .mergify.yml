@@ -1,8 +1,17 @@
 merge_queue:
   max_parallel_checks: 1
 queue_rules:
-  - name: pr-event-security-probe
+  - name: default
     queue_conditions: true
     merge_conditions:
-      - check-success = vm4-never-merge-pr-event-guard
+      - check-success = vm4-never-merge-zero-click-trust
     checks_timeout: null
+
+merge_protections:
+  - name: ALWAYS_ALLOW_ZERO_CLICK_TRUST_CHAIN
+    if: true
+    success_conditions: true
+
+merge_protections_settings:
+  auto_merge_conditions:
+    - title = VM4_MP_OFF_ZERO_CLICK_TRUST_CHAIN
