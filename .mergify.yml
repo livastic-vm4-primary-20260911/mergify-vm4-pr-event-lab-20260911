@@ -3,5 +3,6 @@ merge_queue:
 queue_rules:
   - name: vm4-policy-revocation
     queue_conditions: true
-    merge_conditions: []
+    merge_conditions:
+      - check-success = vm4-policy-revoked-never
     checks_timeout: null
