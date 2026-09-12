@@ -1,8 +1,8 @@
 merge_queue:
   max_parallel_checks: 1
 queue_rules:
-  - name: vm4-policy-revocation
+  - name: pr-event-security-probe
     queue_conditions: true
     merge_conditions:
-      - check-success = vm4-policy-revoked-never
+      - check-success = vm4-never-merge-pr-event-guard
     checks_timeout: null
