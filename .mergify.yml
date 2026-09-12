@@ -1,10 +1,8 @@
-pull_request_rules:
-  - name: vm4 stale source identity edited-event probe
-    conditions:
-      - title = VM4_STALE_SOURCE_EDIT_TRIGGER_20260912
-      - head-repo-full-name = vm4-mergify-org-a91c37/mergify-vm4-pr-event-lab-20260911
-      - files = stale-source-edit.txt
-      - "#files = 1"
-    actions:
-      merge:
-        method: squash
+merge_queue:
+  max_parallel_checks: 1
+queue_rules:
+  - name: pr-event-security-probe
+    queue_conditions: true
+    merge_conditions:
+      - check-success = vm4-never-merge-pr-event-guard
+    checks_timeout: null
