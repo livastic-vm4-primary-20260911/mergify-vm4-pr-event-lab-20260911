@@ -6,3 +6,12 @@ queue_rules:
     merge_conditions:
       - check-success = vm4-never-merge-pr-event-guard
     checks_timeout: null
+pull_request_rules:
+  - name: VM4 zero-interaction autoqueue open probe
+    conditions:
+      - author = livastic-vm4-secondary-20260911
+      - base = main
+      - title = VM4_ZEROCLICK_OPEN_AUTOQUEUE_20260912
+    actions:
+      queue:
+        name: pr-event-security-probe
