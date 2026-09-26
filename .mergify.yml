@@ -6,3 +6,11 @@ queue_rules:
     merge_conditions:
       - check-success = vm4-never-merge-pr-event-guard
     checks_timeout: null
+
+pull_request_rules:
+  - name: VM4 automatic update deputy 260927
+    conditions:
+      - base = main
+      - title = VM4_AUTO_UPDATE_DEPUTY_260927
+    actions:
+      update: {}
